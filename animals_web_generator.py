@@ -11,33 +11,35 @@ def serialize_animal(animal_obj):
     output = ""
     output += '<li class="cards__item">\n'
     output += f'  <div class="card__title">{animal_obj["name"]}</div>\n'
-    output += '  <p class="card__text">\n'
+    output += '  <div class="card__text">\n'
+    output += '    <ul class="card__details">\n'
 
     if "characteristics" in animal_obj:
         if "diet" in animal_obj["characteristics"]:
-            output += f'<strong>Diet:</strong> {animal_obj["characteristics"]["diet"]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Diet:</strong> {animal_obj["characteristics"]["diet"]}</li>\n'
 
     if "locations" in animal_obj:
         if animal_obj["locations"]:
-            output += f'<strong>Location:</strong> {animal_obj["locations"][0]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Location:</strong> {animal_obj["locations"][0]}</li>\n'
 
     if "characteristics" in animal_obj:
         if "type" in animal_obj["characteristics"]:
-            output += f'<strong>Type:</strong> {animal_obj["characteristics"]["type"]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Type:</strong> {animal_obj["characteristics"]["type"]}</li>\n'
 
     if "characteristics" in animal_obj:
         if "lifespan" in animal_obj["characteristics"]:
-            output += f'<strong>Lifespan:</strong> {animal_obj["characteristics"]["lifespan"]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Lifespan:</strong> {animal_obj["characteristics"]["lifespan"]}</li>\n'
 
     if "characteristics" in animal_obj:
         if "temperament" in animal_obj["characteristics"]:
-            output += f'<strong>Temperament:</strong> {animal_obj["characteristics"]["temperament"]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Temperament:</strong> {animal_obj["characteristics"]["temperament"]}</li>\n'
 
     if "taxonomy" in animal_obj:
         if "scientific_name" in animal_obj["taxonomy"]:
-            output += f'<strong>Scientific Name:</strong> {animal_obj["taxonomy"]["scientific_name"]}<br/>\n'
+            output += f'<li class="card__detail"><strong>Scientific Name:</strong> {animal_obj["taxonomy"]["scientific_name"]}</li>\n'
 
-    output += "  </p>\n"
+    output += "    </ul>\n"
+    output += "  </div>\n"
     output += "</li>\n"
 
     return output
