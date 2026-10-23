@@ -25,6 +25,18 @@ def serialize_animal(animal_obj):
         if "type" in animal_obj["characteristics"]:
             output += f'<strong>Type:</strong> {animal_obj["characteristics"]["type"]}<br/>\n'
 
+    if "characteristics" in animal_obj:
+        if "lifespan" in animal_obj["characteristics"]:
+            output += f'<strong>Lifespan:</strong> {animal_obj["characteristics"]["lifespan"]}<br/>\n'
+
+    if "characteristics" in animal_obj:
+        if "temperament" in animal_obj["characteristics"]:
+            output += f'<strong>Temperament:</strong> {animal_obj["characteristics"]["temperament"]}<br/>\n'
+
+    if "taxonomy" in animal_obj:
+        if "scientific_name" in animal_obj["taxonomy"]:
+            output += f'<strong>Scientific Name:</strong> {animal_obj["taxonomy"]["scientific_name"]}<br/>\n'
+
     output += "  </p>\n"
     output += "</li>\n"
 
